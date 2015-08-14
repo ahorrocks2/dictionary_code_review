@@ -10,4 +10,12 @@ describe('the add word path', {:type => :feature}) do
     click_button('Add Word')
     expect(page).to have_content('Snow')
   end
+
+  it('brings the user to a specific words definition(s)') do
+    visit('/')
+    fill_in('new_word', :with => 'White')
+    click_button('Add Word')
+    click_link('White')
+    expect(page).to have_content('White')
+  end
 end

@@ -6,7 +6,7 @@ require('pry')
 also_reload('lib/**/*.rb')
 
 get('/') do
-  @@word_list = Words.all()
+  @word_list = Words.all()
   erb(:index)
 end
 
@@ -15,4 +15,9 @@ post('/add') do
   @word_entry = Words.new(new_word)
   @word_entry.save()
   redirect('/')
+end
+
+get('/word/:id') do
+  @word_entry = Words.find(params.fetch('id').to_i())
+  erb(:definition_form)
 end

@@ -2,8 +2,8 @@
 <h3>List of Words:</h3>
 
 <ul>
-  <% @@word_list.each() do |word_entry| %>
-    <li><%= word_entry.word() %></li>
+  <% @word_list.each() do |word_entry| %>
+    <li><a href="/word/<%= word_entry.id() %>"><%= word_entry.word() %></a></li>
   <% end %>
 </ul>
 
