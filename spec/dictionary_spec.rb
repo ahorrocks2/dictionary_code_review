@@ -51,6 +51,15 @@ describe(Words) do
       expect(Words.find(1)).to(eq(test_entry))
     end
   end
+
+  describe('#add_definition') do
+    it('adds a definition to the word it is called upon') do
+      test_word = Words.new('doc')
+      test_definition = Definitions.new('Noun', 'An understanding dwarf.')
+      test_word.add_definition(test_definition)
+      expect(test_word.show_definitions()).to(eq([test_definition]))
+    end
+  end
 end
 
 

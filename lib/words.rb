@@ -4,6 +4,7 @@ class Words
   define_method(:initialize) do |word_entry|
     @word = word_entry
     @id = @@all_words.length.+(1)
+    @word_definitions = []
   end
 
   define_method(:word) do
@@ -36,5 +37,11 @@ class Words
     found_word
   end
 
-  
+  define_method(:add_definition) do |definition_to_add|
+    @word_definitions.push(definition_to_add)
+  end
+
+  define_method(:show_definitions) do
+    @word_definitions
+  end
 end
