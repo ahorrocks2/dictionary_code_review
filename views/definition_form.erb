@@ -6,7 +6,7 @@
     <h4>There are no definitions for this word yet! Add one below!<h4>
   <% else %>
     <% @word_entry.show_definitions().each() do |word_definition| %>
-      <li><%= word_definition.definition() %>
+      <li><%= word_definition %>
     <% end %>
   <% end %>
 </ul>
@@ -16,8 +16,9 @@
 
 <form action="/add_definition" method="post">
   <input id='word_entry_id' name='word_entry_id' type='hidden' value='<%= @word_entry.id() %>'>
-  <input id="new_definition" name="new_definition" placeholder="Definition" type="text">
 
+  <input id="new_part_of_speech" name="new_part_of_speech" placeholder="Part of Speech" type="text">
+  <input id="new_definition" name="new_definition" placeholder="Definition" type="text">
   <br>
 
   <button type="submit" class="btn btn-info btn-sm">Add Definition</button>

@@ -37,8 +37,9 @@ class Words
     found_word
   end
 
-  define_method(:add_definition) do |definition_to_add|
-    @word_definitions.push(definition_to_add)
+  define_method(:add_definition) do |def_to_add|
+    @word_definitions.push((def_to_add.total_definition()))
+
   end
 
   define_method(:show_definitions) do

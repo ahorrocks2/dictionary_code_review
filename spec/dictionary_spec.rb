@@ -55,21 +55,19 @@ describe(Words) do
   describe('#add_definition') do
     it('adds a definition to the word it is called upon') do
       test_word = Words.new('doc')
-      test_definition = Definitions.new('An understanding dwarf.')
-      test_word.add_definition(test_definition)
-      expect(test_word.show_definitions()).to(eq([test_definition]))
+      test_DEF = Definitions.new('Noun', 'An understanding dwarf.')
+      total = test_word.add_definition(test_DEF)
+      expect(test_word.show_definitions()).to(eq(total))
     end
   end
 
 end
 
-
-
 describe(Definitions) do
-  describe('#definition') do
-    it('returns the dictionary definition') do
-      test_entry = Definitions.new('Acting strangely.')
-      expect(test_entry.definition()).to(eq('Acting strangely.'))
+  describe('#total_definition') do
+    it('returns the dictionary definition with part of speech') do
+      test_entry = Definitions.new('Noun', 'Acting strangely.')
+      expect(test_entry.total_definition()).to(eq('[Noun] Acting strangely.'))
     end
   end
 

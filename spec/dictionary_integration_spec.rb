@@ -24,8 +24,9 @@ describe('the add word path', {:type => :feature}) do
     fill_in('new_word', :with => 'Dwarf')
     click_button('Add Word')
     click_link('Dwarf')
+    fill_in('new_part_of_speech', :with => 'Noun')
     fill_in('new_definition', :with => 'A short mythical being.')
     click_button('Add Definition')
-    expect(page).to have_content('A short mythical being.')
+    expect(page).to have_content('short mythical being.')
   end
 end
