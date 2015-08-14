@@ -1,0 +1,19 @@
+<h1>Dictionary Dot Com</h1>
+<h3>List of Words:</h3>
+
+<ul>
+  <% @@word_list.each() do |word_entry| %>
+    <li><%= word_entry.word() %></li>
+  <% end %>
+</ul>
+
+<br>
+<br>
+<h4>Add a word to the Dictionary:</h4>
+
+<form action='/add' method='post'>
+  <label for='new_word'>Word:</label>
+  <input id='new_word' name='new_word' type='text'>
+
+  <button class='btn btn-primary' type='submit'>Add Word</button>
+</form>
