@@ -27,5 +27,6 @@ post('/add_definition') do
   new_definition = params.fetch('new_definition')
   definition_entry = Definitions.new(new_definition)
   @word_entry.add_definition(definition_entry)
+
   redirect('/word/' + @word_entry.id().to_s())
 end

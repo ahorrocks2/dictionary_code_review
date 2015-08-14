@@ -1,7 +1,7 @@
 <h1>Dictionary Dot Com</h1>
 <h3>List of Words:</h3>
 
-<ul>
+<ul id=wordlist>
   <% @word_list.each() do |word_entry| %>
     <li><a href="/word/<%= word_entry.id() %>"><%= word_entry.word() %></a></li>
   <% end %>
@@ -12,8 +12,7 @@
 <h4>Add a word to the Dictionary:</h4>
 
 <form action='/add' method='post'>
-  <label for='new_word'>Word:</label>
-  <input id='new_word' name='new_word' type='text'>
+  <input id='new_word' name='new_word' placeholder="Word" type='text'>
 
-  <button class='btn btn-primary' type='submit'>Add Word</button>
+  <button class='btn btn-info btn-sm' type='submit'>Add Word</button>
 </form>
