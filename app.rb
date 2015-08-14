@@ -21,3 +21,11 @@ get('/word/:id') do
   @word_entry = Words.find(params.fetch('id').to_i())
   erb(:definition_form)
 end
+
+post('/add_definition') do
+  @word_entry = Words.find(params.fetch('word_entry_id').to_i())
+  new_definition = params.fetch('new_definition')
+  definition_entry = Definitions.new(new_definition)
+  @word_entry.add_definition(definition_entry)
+  redirect('/word/' + @word_entry.id().to_s())
+end

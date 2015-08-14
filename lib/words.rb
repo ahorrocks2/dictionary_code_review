@@ -14,7 +14,7 @@ class Words
   define_method(:save) do
     @@all_words.push(self)
   end
-  
+
   define_singleton_method(:all) do
     @@all_words
   end
@@ -44,4 +44,5 @@ class Words
   define_method(:show_definitions) do
     @word_definitions
   end
+
 end

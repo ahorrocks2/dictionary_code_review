@@ -18,4 +18,14 @@ describe('the add word path', {:type => :feature}) do
     click_link('White')
     expect(page).to have_content('White')
   end
+
+  it('allows user to add definition of specific word on its page') do
+    visit('/')
+    fill_in('new_word', :with => 'Dwarf')
+    click_button('Add Word')
+    click_link('Dwarf')
+    fill_in('new_definition', :with => 'A short mythical being.')
+    click_button('Add Definition')
+    expect(page).to have_content('A short mythical being.')
+  end
 end
